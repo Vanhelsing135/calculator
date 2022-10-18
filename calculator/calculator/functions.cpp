@@ -39,7 +39,7 @@ Operation askForOperation() {
 
 
 bool isUnary(Operation oper) {
-	if (oper == Exp || oper == Sqrt || oper == Log) {
+	if (oper == Exp || oper == Sqrt || oper == Log || oper == Negate) {
 		return true;
 	}
 	return false;
@@ -61,6 +61,8 @@ double applyUnaryOperation(Operation oper, double x) {
 	case Operation::Sqrt: return sqrt(x);
 		break;
 	case Operation::Log: return log(x);
+		break;
+	case Operation::Negate: return (-x);
 		break;
 	}
 }
